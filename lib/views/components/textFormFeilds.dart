@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables, prefer_if_null_operators
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
@@ -10,6 +12,7 @@ class CustomTextFormFeild extends StatelessWidget {
   final int? maxLines;
   final String? hintText;
   final onTAp;
+  final style;
   final readOnly;
   final List<TextInputFormatter>? inputForamtters;
   final Widget? prefixIcon;
@@ -28,7 +31,8 @@ class CustomTextFormFeild extends StatelessWidget {
       this.inputForamtters,
       this.prefixIcon,
       this.hintStyle,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.style});
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +43,7 @@ class CustomTextFormFeild extends StatelessWidget {
       validator: validator,
       maxLines: maxLines,
       inputFormatters: inputForamtters,
-      style: TextStyle(
-        color: Colors.black,
-        fontSize: 14,
-      ),
+      style: style,
       onTap: onTAp,
       decoration: InputDecoration(
         // prefix: Text('+91 ',style: TextStyle(color: tBlack),),
@@ -51,7 +52,7 @@ class CustomTextFormFeild extends StatelessWidget {
         hintText: hintText,
         hintStyle: hintStyle != null
             ? hintStyle
-            : TextStyle(
+            : const TextStyle(
                 color: Colors.black,
                 fontSize: 14,
               ),
@@ -61,6 +62,7 @@ class CustomTextFormFeild extends StatelessWidget {
           horizontal: 2.w,
           vertical: 0.5.h,
         ),
+
         filled: true,
 
         border: OutlineInputBorder(
