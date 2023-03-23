@@ -84,7 +84,7 @@ class _skipScreenState extends State<skipScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Bhanu.navigateTo(context, MyHomePage(title: "khdckhc"));
+                    Bhanu.navigateTo(context, MyHomePage());
                     // Navigator.push(
                     //   context,
                     //   MaterialPageRoute(builder: (context) => SignInScreen()),
